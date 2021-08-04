@@ -22,8 +22,8 @@ use App\Http\Controllers\api\DriverController;
 
 Route::group(['prefix' => 'woocommerce'], function() {
     Route::post('order_create',  [WoocommerceController::class, 'order_create']);
-    Route::post('order_update',  [WoocommerceController::class, 'order_create']);
-    Route::post('order_delete',  [WoocommerceController::class, 'order_create']);
+    Route::post('order_update',  [WoocommerceController::class, 'order_update']);
+    Route::post('order_delete',  [WoocommerceController::class, 'order_delete']);
 });
 
 Route::post('/driver/login', [DriverController::class, 'login']);

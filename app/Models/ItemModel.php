@@ -123,19 +123,18 @@ class ItemModel
     public static function saveItem(array $itemdata)
     {
         try {
-
             $isNew = empty($itemdata['item_id']) || $itemdata['item_id'] == 0;
 
-            if ($isNew) {
-                // $query = DB::table('items')
-                //     ->select('item_id')
-                //     ->where("item_name", "=", $itemdata['item_name'])
-                //     ->first();
-
-                if (self::skuExists($itemdata['item_sku']) != false){
-                    return "SKU already exists!";
-                }
-            }
+//            if ($isNew) {
+//                // $query = DB::table('items')
+//                //     ->select('item_id')
+//                //     ->where("item_name", "=", $itemdata['item_name'])
+//                //     ->first();
+//
+//                if (self::skuExists($itemdata['item_sku']) != false){
+//                    return "SKU already exists!";
+//                }
+//            }
 
             $result = "";
             if ($isNew) {

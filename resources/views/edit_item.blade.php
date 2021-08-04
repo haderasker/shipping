@@ -14,14 +14,13 @@
         <div class="card-body">
             <div class="result"></div>
 
-
             <h3 style="margin-bottom: -15px;">General</h3>
             <hr>
 
             <div class="row">
                 <div class="col-md-6">
-                    <input type="file" name="image"/>
-                    <img src="<?=empty($item->item_image)?url('').'/img/empty.jpg':$item->item_image?>" style="width: inherit;"/>
+                    <input name="image" type="file" accept="image/*" onchange="loadFile(event)">
+                    <img src="<?=empty($item->item_image)?url('').'/img/empty.jpg':$item->item_image?>"  style="width: inherit;" id="output" />
                 </div>
 
                 <div class="col-md-6">
@@ -199,6 +198,16 @@ function saveItem(){
 }
 
     </script>
+
+<script>
+    var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+        }
+    };
+</script>
 @endsection
 
 

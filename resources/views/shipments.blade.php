@@ -29,6 +29,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="input-group col-md-2">
+                <a type="button" class="btn btn-primary waves-effect waves-light mr-1"  onClick="window.location.reload();" >Refresh</a>
+                </div>
 
                 <div class="input-group col-md-4">
                     <input type="text" id="fp-filter" class="form-control flatpickr-range mr-1" placeholder="YYYY-MM-DD to YYYY-MM-DD" />

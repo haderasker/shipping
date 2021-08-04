@@ -22,6 +22,7 @@ use function PHPUnit\Framework\returnSelf;
 class WoocommerceController extends BaseController {
 
     private function saveOrder($payload, $clientCode, $status = -1){
+        dd($payload);
 
         $client = ClientModel::getClientByCode($clientCode);
         if (empty($client->client_id)){

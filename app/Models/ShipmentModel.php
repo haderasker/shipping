@@ -211,12 +211,13 @@ class ShipmentModel
                 $shipmentdata['shipment_created'] = date("Y-m-d H:i:s");
                 $result = DB::table('shipments')->insertGetId($shipmentdata);
 
-                if ($shipmentdata['shipment_status'] == self::SHIPMENT_STATUS_PENDING){
-                    AppHelper::smsMisrSend(
-                        ClientModel::getClientByID($shipmentdata['shipment_clientId']),
-                        $shipmentdata['shipment_customerPhone'],
-                        'test pending');
-                }
+//                if ($shipmentdata['shipment_status'] == self::SHIPMENT_STATUS_PENDING){
+//                    AppHelper::smsMisrSend(
+//                        ClientModel::getClientByID($shipmentdata['shipment_clientId']),'',
+//                        'test pending',
+//                        $shipmentdata['shipment_customerPhone']
+//                        ,'test');
+//                }
 
             } else {
                 $shipmentdata['shipment_updated'] = date("Y-m-d H:i:s");
